@@ -1,6 +1,7 @@
 import 'package:app/UI/Admin_Interface/cartaps/editdataofthecar.dart';
 import 'package:app/UI/Admin_Interface/employeetaps/addEmployee.dart';
 import 'package:app/UI/Admin_Interface/employeetaps/editemployeescreen.dart';
+import 'package:app/UI/Admin_Interface/reportsscreen.dart';
 import 'package:app/UI/Emloyee/EmployeeHomeScreen.dart';
 import 'package:app/UI/user_interface/StartScreen.dart';
 import 'package:app/UI/user_interface/home_screen.dart';
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
           ProfleScreen.routeName :(_) => ProfleScreen(),
           EditProfileScreen.routeName :(_) => EditProfileScreen(),
           ViewCarDetailsScreen.routeName :(_) => ViewCarDetailsScreen(),
+          ReportsScreen.routeName:(_) => ReportsScreen(),
           CreateAccount.routeName :(_) => CreateAccount(),
           PaymentPage.routeName :(_) => PaymentPage(),
           QRPage.routeName :(_)=> QRPage(),

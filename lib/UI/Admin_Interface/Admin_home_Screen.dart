@@ -3,6 +3,7 @@ import 'package:app/UI/Admin_Interface/cartaps/ShowCarsTap.dart';
 import 'package:app/UI/Admin_Interface/cartaps/addcarscreen.dart';
 import 'package:app/UI/Admin_Interface/employeetaps/Show_Emplyoee_Tap.dart';
 import 'package:app/UI/Admin_Interface/employeetaps/addEmployee.dart';
+import 'package:app/UI/Admin_Interface/reportsscreen.dart';
 import 'package:app/UI/theme/themedatafile.dart';
 import 'package:flutter/material.dart';
 
@@ -38,7 +39,22 @@ class _AdminHomeScreeState extends State<AdminHomeScree> {
         drawer: Drawer(
             child: Column(
               children: [
-                const SizedBox(height: 30,),
+
+                const SizedBox(height: 70,),
+                Row(
+                  children: [
+                    const SizedBox(width: 15,),
+                    const Icon(Icons.info_outline_rounded , size: 30, color: MyTheme.primarycolor,),
+                    const SizedBox(width: 10,),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, ReportsScreen.routeName);
+                      },
+                      child:Text("Reports " , style: Theme.of(context).textTheme.headline1?.copyWith(fontSize: 22 ,fontWeight: FontWeight.w500),textAlign: TextAlign.start,) ,
+                    ),
+                  ],
+                ),
+                Container(height: 1, margin: const EdgeInsets.symmetric(horizontal: 20 , vertical: 5), color: MyTheme.primarycolor,),
                 Row(
                   children: [
                     const SizedBox(width: 15,),
