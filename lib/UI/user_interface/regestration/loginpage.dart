@@ -23,13 +23,13 @@ class _LoginPageState extends State<LoginPage> {
 
   List<User> users_list = [];
   List<Employee> EmployeeList = [];
-
+  TextEditingController Email = TextEditingController();
+  TextEditingController Password = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
     var mediaquere = MediaQuery.of(context).size;
-    TextEditingController Email = TextEditingController();
-    TextEditingController Password = TextEditingController();
+
     if (EmployeeList.isEmpty ){
       readdata();
     }
