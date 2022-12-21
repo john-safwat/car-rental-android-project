@@ -75,11 +75,8 @@ class _AdminHomeScreeState extends State<AdminHomeScree> {
           ),
           child: FloatingActionButton(
             onPressed: (){
-              if (curantindex == 0 ){
-                Navigator.pushNamed(context, AddCerScreen.routeName);
-              }else{
-                Navigator.pushNamed(context, AddEmployeeSCreen.routeName);
-              }
+              Show_Modal_Buttom_Sheet(context);
+
             },
             child:const Icon(Icons.add_rounded , size: 36, color: MyTheme.white,),
           ),
@@ -106,5 +103,47 @@ class _AdminHomeScreeState extends State<AdminHomeScree> {
       ),
     );
   }
+  Show_Modal_Buttom_Sheet (BuildContext context){
+    return showModalBottomSheet(
+        context: context,
+        shape: RoundedRectangleBorder(borderRadius:BorderRadius.only(topLeft: Radius.circular(30) , topRight: Radius.circular(30))),
+        builder: (context) => Container(
 
+          child: Container(
+            height: 200,
+            padding: EdgeInsets.all(20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                ElevatedButton(
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(200))),
+                    padding: MaterialStateProperty.all(EdgeInsets.all(15)),
+                    backgroundColor: MaterialStateProperty.all(MyTheme.primarycolor),
+                    fixedSize: MaterialStateProperty.all(Size.infinite)
+                  ),
+                    onPressed: (){
+                      Navigator.pushNamed(context, AddCerScreen.routeName);
+                    },
+                    child: Text('Add Car' , style: Theme.of(context).textTheme.headline2?.copyWith(fontSize: 22),)
+                ),
+                SizedBox(height: 30,),
+                ElevatedButton(
+                    style: ButtonStyle(
+                        shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(200))),
+                        padding: MaterialStateProperty.all(EdgeInsets.all(15)),
+                        backgroundColor: MaterialStateProperty.all(MyTheme.primarycolor),
+                        fixedSize: MaterialStateProperty.all(Size.infinite)
+                    ),
+                    onPressed: (){
+                      Navigator.pushNamed(context, AddEmployeeSCreen.routeName);
+                    },
+                    child: Text('Add Employee', style: Theme.of(context).textTheme.headline2?.copyWith(fontSize: 22),)
+                )
+              ],
+            ),
+          ),
+        ),
+    ) ;
+  }
 }
